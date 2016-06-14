@@ -1,0 +1,2 @@
+include/libjsonnet.h usr/include
+include/libjsonnet++.h usr/include
