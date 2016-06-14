@@ -3,13 +3,22 @@ Date: Tue, 14 Jun 2016 17:01:31 +0800
 Subject: Linking to shared library
 
 ---
- Makefile | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ Makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index e4a8e04..bc7f295 100644
+index e4a8e04..7c6698f 100644
 --- a/Makefile
 +++ b/Makefile
+@@ -89,7 +89,7 @@ all: $(ALL)
+ 
+ TEST_SNIPPET = "std.assertEqual(({ x: 1, y: self.x } { x: 2 }).y, 2)"
+ test: jsonnet libjsonnet.so libjsonnet_test_snippet libjsonnet_test_file
+-	./jsonnet -e $(TEST_SNIPPET)
++	LD_LIBRARY_PATH=. ./jsonnet -e $(TEST_SNIPPET)
+ 	LD_LIBRARY_PATH=. ./libjsonnet_test_snippet $(TEST_SNIPPET)
+ 	LD_LIBRARY_PATH=. ./libjsonnet_test_file "test_suite/object.jsonnet"
+ 	cd examples ; ./check.sh
 @@ -112,8 +112,8 @@ core/desugarer.cpp: core/std.jsonnet.h
  	$(CXX) -c $(CXXFLAGS) $< -o $@
  
