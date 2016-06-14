@@ -4,8 +4,8 @@ Source: http://jsonnet.org/
 
 Files: *
 Copyright: 2015 Google Inc
-License: Apache-2.0
 Comment: See https://github.com/google/jsonnet/graphs/contributors
+License: Apache-2.0
  On Debian systems, the complete text of the Apache 2.0 License can be found in
  "/usr/share/common-licenses/Apache-2.0".
 
