@@ -8,4 +8,4 @@ DEB_CFLAGS_MAINT_APPEND=-Wall -Wextra -pedantic -std=c99 -fPIC -Iinclude
 include /usr/share/dpkg/default.mk
 
 %:
-	dh $@
+	dh $@ -- -u'jsonnet libjsonnet.so libjsonnet++.so'

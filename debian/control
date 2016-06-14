@@ -45,3 +45,29 @@ Description: library to evaluate Jsonnet - development files
  fragments of JSON within the structure, bringing the same
  benefit to structured data that templating languages bring
  to plain text.
+
+Package: libjsonnet++
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: library to evaluate Jsonnet - libraries
+ The data templating language for JSON or YAML.
+ .
+ Jsonnet is a domain specific configuration language that
+ helps you define JSON data. Jsonnet lets you compute
+ fragments of JSON within the structure, bringing the same
+ benefit to structured data that templating languages bring
+ to plain text.
+
+Package: libjsonnet++-dev
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: library to evaluate Jsonnet - libraries
+ The data templating language for JSON or YAML.
+ .
+ Jsonnet is a domain specific configuration language that
+ helps you define JSON data. Jsonnet lets you compute
+ fragments of JSON within the structure, bringing the same
+ benefit to structured data that templating languages bring
+ to plain text.
