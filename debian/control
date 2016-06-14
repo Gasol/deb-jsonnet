@@ -11,7 +11,8 @@ Vcs-Browser: https://github.com/Google/jsonnet
 Package: jsonnet
 Section: utils
 Architecture: any
-Depends: libjsonnet (= ${binary:Version}), ${misc:Depends}
+Depends: libjsonnet (= ${binary:Version}), ${shlibs:Depends},
+ ${misc:Depends}
 Description: Command-line tool to evaluate Jsonnet
  The data templating language for JSON or YAML.
  .
