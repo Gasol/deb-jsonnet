@@ -117,10 +117,14 @@ jsonnet: cmd/jsonnet.cpp libjsonnet.so
 
 # C binding.
 libjsonnet.so: $(LIB_OBJ)
-	$(CXX) $(LDFLAGS) $(LIB_OBJ) $(SHARED_LDFLAGS) -o $@
+	$(CXX) $(LDFLAGS) $(LIB_OBJ) $(SHARED_LDFLAGS) -Wl,-soname,$@.0 -o $@.0.0.0
+	ln -s $@.0.0.0 $@.0
+	ln -s $@.0 $@
 
 libjsonnet++.so: $(LIB_CPP_OBJ)
-	$(CXX) $(LDFLAGS) $(LIB_CPP_OBJ) $(SHARED_LDFLAGS) -o $@
+	$(CXX) $(LDFLAGS) $(LIB_CPP_OBJ) $(SHARED_LDFLAGS) -Wl,-soname,$@.0 -o $@.0.0.0
+	ln -s $@.0.0.0 $@.0
+	ln -s $@.0 $@
 
 # Javascript build of C binding
 JS_EXPORTED_FUNCTIONS = 'EXPORTED_FUNCTIONS=["_jsonnet_make", "_jsonnet_evaluate_snippet", "_jsonnet_realloc", "_jsonnet_destroy"]'
