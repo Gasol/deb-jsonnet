@@ -121,10 +121,16 @@ libjsonnet.so: $(LIB_OBJ)
 	ln -s $@.0.0.0 $@.0
 	ln -s $@.0 $@
 
+libjsonnet.a: $(LIB_OBJ)
+	ar rcs $@ $^
+
 libjsonnet++.so: $(LIB_CPP_OBJ)
 	$(CXX) $(LDFLAGS) $(LIB_CPP_OBJ) $(SHARED_LDFLAGS) -Wl,-soname,$@.0 -o $@.0.0.0
 	ln -s $@.0.0.0 $@.0
 	ln -s $@.0 $@
+
+libjsonnet++.a: $(LIB_CPP_OBJ)
+	ar rcs $@ $^
 
 # Javascript build of C binding
 JS_EXPORTED_FUNCTIONS = 'EXPORTED_FUNCTIONS=["_jsonnet_make", "_jsonnet_evaluate_snippet", "_jsonnet_realloc", "_jsonnet_destroy"]'
@@ -162,6 +168,6 @@ core/%.jsonnet.h: stdlib/%.jsonnet
 	echo >> $@
 
 clean:
-	rm -vf */*~ *~ .*~ */.*.swp .*.swp $(ALL) *.o core/*.jsonnet.h cpp/*.o Make.depend
+	rm -vf */*~ *~ .*~ */.*.swp .*.swp $(ALL) *.so *.a *.o core/*.jsonnet.h cpp/*.o Make.depend
 
 -include Makefile.depend
