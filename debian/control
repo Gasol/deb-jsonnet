@@ -14,7 +14,7 @@ Architecture: any
 Depends: libjsonnet (= ${binary:Version}), ${misc:Depends}
 Description: Command-line tool to evaluate Jsonnet
  The data templating language for JSON or YAML.
- 
+ .
  Jsonnet is a domain specific configuration language that
  helps you define JSON data. Jsonnet lets you compute
  fragments of JSON within the structure, bringing the same
@@ -27,7 +27,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: library to evaluate Jsonnet - libraries
  The data templating language for JSON or YAML.
-
+ .
  Jsonnet is a domain specific configuration language that
  helps you define JSON data. Jsonnet lets you compute
  fragments of JSON within the structure, bringing the same
@@ -39,7 +39,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: library to evaluate Jsonnet - development files
  The data templating language for JSON or YAML.
-
+ .
  Jsonnet is a domain specific configuration language that
  helps you define JSON data. Jsonnet lets you compute
  fragments of JSON within the structure, bringing the same
