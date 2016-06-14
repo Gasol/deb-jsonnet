@@ -89,7 +89,7 @@ all: $(ALL)
 
 TEST_SNIPPET = "std.assertEqual(({ x: 1, y: self.x } { x: 2 }).y, 2)"
 test: jsonnet libjsonnet.so libjsonnet_test_snippet libjsonnet_test_file
-	./jsonnet -e $(TEST_SNIPPET)
+	LD_LIBRARY_PATH=. ./jsonnet -e $(TEST_SNIPPET)
 	LD_LIBRARY_PATH=. ./libjsonnet_test_snippet $(TEST_SNIPPET)
 	LD_LIBRARY_PATH=. ./libjsonnet_test_file "test_suite/object.jsonnet"
 	cd examples ; ./check.sh
@@ -112,8 +112,8 @@ core/desugarer.cpp: core/std.jsonnet.h
 	$(CXX) -c $(CXXFLAGS) $< -o $@
 
 # Commandline executable.
-jsonnet: cmd/jsonnet.cpp $(LIB_OBJ)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $< $(LIB_SRC:.cpp=.o) -o $@
+jsonnet: cmd/jsonnet.cpp libjsonnet.so
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $< -ljsonnet -L. -o $@
 
 # C binding.
 libjsonnet.so: $(LIB_OBJ)
