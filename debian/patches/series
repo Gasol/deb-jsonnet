@@ -3,3 +3,4 @@
 0003-Add-SONAME-to-share-libraries.patch
 0004-Generate-static-library.patch
 0005-Fix-tests-by-adding-LD_LIBRAR_PATH.patch
+0006-Fix-privacy-breach-uses-embedded-file.patch
