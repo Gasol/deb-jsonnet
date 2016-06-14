@@ -92,10 +92,10 @@ test: jsonnet libjsonnet.so libjsonnet_test_snippet libjsonnet_test_file
 	LD_LIBRARY_PATH=. ./jsonnet -e $(TEST_SNIPPET)
 	LD_LIBRARY_PATH=. ./libjsonnet_test_snippet $(TEST_SNIPPET)
 	LD_LIBRARY_PATH=. ./libjsonnet_test_file "test_suite/object.jsonnet"
-	cd examples ; ./check.sh
-	cd examples/terraform ; ./check.sh
-	cd test_suite ; ./run_tests.sh
-	cd test_suite ; ./run_fmt_tests.sh
+	cd examples ; LD_LIBRARY_PATH=.. ./check.sh
+	cd examples/terraform ; LD_LIBRARY_PATH=.. ./check.sh
+	cd test_suite ; LD_LIBRARY_PATH=.. ./run_tests.sh
+	cd test_suite ; LD_LIBRARY_PATH=.. ./run_fmt_tests.sh
 
 MAKEDEPEND_SRCS = \
 	cmd/jsonnet.cpp \
