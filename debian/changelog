@@ -1,5 +1,5 @@
 jsonnet (0.8.8-1) unstable; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release
 
  -- Gasol Wu <gasol.wu@gmail.com>  Tue, 14 Jun 2016 10:17:11 +0800
