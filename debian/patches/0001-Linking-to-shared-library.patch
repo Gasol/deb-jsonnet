@@ -1,0 +1,21 @@
+From: Gasol Wu <gasol.wu@gmail.com>
+Date: Tue, 14 Jun 2016 17:01:31 +0800
+Subject: Linking to shared library
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index e4a8e04..6560abf 100644
+--- a/Makefile
++++ b/Makefile
+@@ -113,7 +113,7 @@ core/desugarer.cpp: core/std.jsonnet.h
+ 
+ # Commandline executable.
+ jsonnet: cmd/jsonnet.cpp $(LIB_OBJ)
+-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $< $(LIB_SRC:.cpp=.o) -o $@
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -ljsonnet -L. $< -o $@
+ 
+ # C binding.
+ libjsonnet.so: $(LIB_OBJ)
