@@ -1,0 +1,20 @@
+From: Gasol Wu <gasol.wu@gmail.com>
+Date: Tue, 14 Jun 2016 18:07:36 +0800
+Subject: Clean missing object file
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 7497df1..7107a1b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -158,6 +158,6 @@ core/%.jsonnet.h: stdlib/%.jsonnet
+ 	echo >> $@
+ 
+ clean:
+-	rm -vf */*~ *~ .*~ */.*.swp .*.swp $(ALL) *.o core/*.jsonnet.h Make.depend
++	rm -vf */*~ *~ .*~ */.*.swp .*.swp $(ALL) *.o core/*.jsonnet.h cpp/*.o Make.depend
+ 
+ -include Makefile.depend

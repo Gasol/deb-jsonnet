@@ -1,0 +1,38 @@
+From: Gasol Wu <gasol.wu@gmail.com>
+Date: Tue, 14 Jun 2016 23:51:57 +0800
+Subject: Generate static library
+
+---
+ Makefile | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index b831d27..a759724 100644
+--- a/Makefile
++++ b/Makefile
+@@ -121,11 +121,17 @@ libjsonnet.so: $(LIB_OBJ)
+ 	ln -s $@.0.0.0 $@.0
+ 	ln -s $@.0 $@
+ 
++libjsonnet.a: $(LIB_OBJ)
++	ar rcs $@ $^
++
+ libjsonnet++.so: $(LIB_CPP_OBJ)
+ 	$(CXX) $(LDFLAGS) $(LIB_CPP_OBJ) $(SHARED_LDFLAGS) -Wl,-soname,$@.0 -o $@.0.0.0
+ 	ln -s $@.0.0.0 $@.0
+ 	ln -s $@.0 $@
+ 
++libjsonnet++.a: $(LIB_CPP_OBJ)
++	ar rcs $@ $^
++
+ # Javascript build of C binding
+ JS_EXPORTED_FUNCTIONS = 'EXPORTED_FUNCTIONS=["_jsonnet_make", "_jsonnet_evaluate_snippet", "_jsonnet_realloc", "_jsonnet_destroy"]'
+ 
+@@ -162,6 +168,6 @@ core/%.jsonnet.h: stdlib/%.jsonnet
+ 	echo >> $@
+ 
+ clean:
+-	rm -vf */*~ *~ .*~ */.*.swp .*.swp $(ALL) *.o core/*.jsonnet.h cpp/*.o Make.depend
++	rm -vf */*~ *~ .*~ */.*.swp .*.swp $(ALL) *.so *.a *.o core/*.jsonnet.h cpp/*.o Make.depend
+ 
+ -include Makefile.depend
