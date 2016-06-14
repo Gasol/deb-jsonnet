@@ -21,6 +21,19 @@ Description: Command-line tool to evaluate Jsonnet
  benefit to structured data that templating languages bring
  to plain text.
 
+Package: jsonnet-doc
+Section: doc
+Architecture: any
+Depends: libjsonnet (= ${binary:Version}), ${misc:Depends}
+Description: Command-line tool to evaluate Jsonnet - documentations
+ The data templating language for JSON or YAML.
+ .
+ Jsonnet is a domain specific configuration language that
+ helps you define JSON data. Jsonnet lets you compute
+ fragments of JSON within the structure, bringing the same
+ benefit to structured data that templating languages bring
+ to plain text.
+
 Package: libjsonnet
 Section: libs
 Architecture: any
