@@ -1,1 +1,2 @@
-libjsonnet++.so.* usr/lib
+libjsonnet++.so.0 usr/lib
+libjsonnet++.so.0.0.0 usr/lib

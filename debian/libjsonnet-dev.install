@@ -1,2 +1,3 @@
 include/libjsonnet.h usr/include
 libjsonnet.a usr/lib
+libjsonnet.so usr/lib
