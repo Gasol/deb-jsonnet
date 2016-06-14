@@ -2,7 +2,7 @@ Document: jsonnet
 Title: Jsonnet Manual
 Author: <insert document author here>
 Abstract: Documentation for Jsonnet users
-Section: doc
+Section: Programming
 
 Format: HTML
 Index: /usr/share/doc/jsonnet/html/index.html
