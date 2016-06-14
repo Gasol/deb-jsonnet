@@ -11,4 +11,5 @@ include /usr/share/dpkg/default.mk
 	dh $@
 
 override_dh_auto_build:
-	dh_auto_build -- jsonnet libjsonnet.so libjsonnet++.so
+	dh_auto_build -- jsonnet libjsonnet.so libjsonnet.a \
+		libjsonnet++.so libjsonnet++.a
