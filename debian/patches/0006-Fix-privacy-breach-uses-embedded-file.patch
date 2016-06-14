@@ -1,0 +1,21 @@
+From: Gasol Wu <gasol.wu@gmail.com>
+Date: Wed, 15 Jun 2016 01:11:49 +0800
+Subject: Fix privacy-breach-uses-embedded-file
+
+---
+ doc/_layouts/default.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/doc/_layouts/default.html b/doc/_layouts/default.html
+index e27b4cd..4ce9aec 100644
+--- a/doc/_layouts/default.html
++++ b/doc/_layouts/default.html
+@@ -14,7 +14,7 @@
+     {% include domain-redirect.html %}
+ 
+     <script type="text/javascript"
+-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
++      src="/usr/share/javascript/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+     </script>
+ 
+     <script type="text/javascript">
