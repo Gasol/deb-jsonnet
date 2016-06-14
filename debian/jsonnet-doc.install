@@ -1,1 +1,1 @@
-doc/ usr/share/doc/jsonnet/html
+doc/* usr/share/doc/jsonnet/html
