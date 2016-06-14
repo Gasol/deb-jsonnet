@@ -48,6 +48,7 @@ Description: library to evaluate Jsonnet - libraries
  to plain text.
 
 Package: libjsonnet-dev
+Section: libdevel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: library to evaluate Jsonnet - development files
@@ -73,7 +74,7 @@ Description: library to evaluate Jsonnet - libraries
  to plain text.
 
 Package: libjsonnet++-dev
-Section: libs
+Section: libdevel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: library to evaluate Jsonnet - libraries
