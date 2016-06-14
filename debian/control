@@ -3,20 +3,45 @@ Priority: optional
 Maintainer: Gasol Wu <gasol.wu@gmail.com>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.5
-Section: libs
-Homepage: <insert the upstream URL, if relevant>
-#Vcs-Git: git://anonscm.debian.org/collab-maint/jsonnet.git
-#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/jsonnet.git;a=summary
+Section: devel
+Homepage: http://jsonnet.org
+Vcs-Git: https://github.com/google/jsonnet.git
+Vcs-Browser: https://github.com/Google/jsonnet
 
-Package: jsonnet-dev
-Section: libdevel
+Package: jsonnet
+Section: utils
 Architecture: any
-Depends: jsonnetBROKEN (= ${binary:Version}), ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: libjsonnet (= ${binary:Version}), ${misc:Depends}
+Description: Command-line tool to evaluate Jsonnet
+ The data templating language for JSON or YAML.
+ 
+ Jsonnet is a domain specific configuration language that
+ helps you define JSON data. Jsonnet lets you compute
+ fragments of JSON within the structure, bringing the same
+ benefit to structured data that templating languages bring
+ to plain text.
 
-Package: jsonnetBROKEN
+Package: libjsonnet
+Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: library to evaluate Jsonnet - libraries
+ The data templating language for JSON or YAML.
+
+ Jsonnet is a domain specific configuration language that
+ helps you define JSON data. Jsonnet lets you compute
+ fragments of JSON within the structure, bringing the same
+ benefit to structured data that templating languages bring
+ to plain text.
+
+Package: libjsonnet-dev
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: library to evaluate Jsonnet - development files
+ The data templating language for JSON or YAML.
+
+ Jsonnet is a domain specific configuration language that
+ helps you define JSON data. Jsonnet lets you compute
+ fragments of JSON within the structure, bringing the same
+ benefit to structured data that templating languages bring
+ to plain text.
