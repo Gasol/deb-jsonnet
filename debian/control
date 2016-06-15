@@ -24,8 +24,8 @@ Description: Command-line tool to evaluate Jsonnet
 
 Package: jsonnet-doc
 Section: doc
-Architecture: any
-Depends: libjsonnet (= ${binary:Version}), ${misc:Depends},
+Architecture: all
+Depends: ${misc:Depends},
  libjs-mathjax
 Description: Command-line tool to evaluate Jsonnet - documentations
  The data templating language for JSON or YAML.
