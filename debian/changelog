@@ -1,5 +1,5 @@
-jsonnet (0.8.8-1) unstable; urgency=low
+jsonnet (0.8.8-1ppa1~xenial) xenial; urgency=low
 
   * Initial release
 
- -- Gasol Wu <gasol.wu@gmail.com>  Tue, 14 Jun 2016 10:17:11 +0800
+ -- Gasol Wu <gasol.wu@gmail.com>  Thu, 18 Jun 2016 23:03:51 +0800
