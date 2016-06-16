@@ -29,3 +29,4 @@ build/
 dist/
 jsonnet.egg-info/
 
+.pc
